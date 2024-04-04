@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GoSportApp</string>
+    <string name="internet_connection">Нет интернет соединения</string>
+    <string name="reload">Перезагрузить</string>
+    <string name="price">от %s</string>
+</resources>

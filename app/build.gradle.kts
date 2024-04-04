@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
+    id ("androidx.navigation.safeargs")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -33,15 +37,42 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(project(":core:model"))
+    implementation(project(":core:network"))
+    implementation(project(":features:listproducts"))
+    implementation(project(":features:profiles"))
+    implementation(project(":features:shop"))
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("com.google.dagger:hilt-android:${Versions.hilt}")
+    kapt ("com.google.dagger:hilt-compiler:${Versions.hilt}")
+    implementation ("androidx.paging:paging-runtime-ktx:${Versions.paging}")
+    implementation ("io.coil-kt:coil:${Versions.coil}")
+    implementation ("androidx.activity:activity-ktx:${Versions.activityKtx}")
+    implementation ("androidx.recyclerview:recyclerview:${Versions.recyclerView}")
+    // ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}")
+    // LiveData
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}")
+    // reflection-free flavor
+    implementation ("com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Versions.viewBinding}")
+    implementation ("androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}")
+    implementation ("androidx.navigation:navigation-ui-ktx:${Versions.navVersion}")
+    implementation("androidx.core:core-ktx:${Versions.coreKtx}")
+    implementation("androidx.appcompat:appcompat:${Versions.appcompat}")
+    implementation("com.google.android.material:material:${Versions.material}")
+    implementation("androidx.constraintlayout:constraintlayout:${Versions.constraint}")
+    testImplementation("junit:junit:${Versions.junit}")
+    androidTestImplementation("androidx.test.ext:junit:${Versions.extJunit}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.espresso}")
 }

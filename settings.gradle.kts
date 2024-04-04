@@ -15,4 +15,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "GoSportApp"
 include(":app")
- 
+include(":core:domain")
+include(":core:network")
+include(":core:model")
+include(":core:data")
+include(":features:listproducts")
+include(":features:profiles")
+include(":features:shop")

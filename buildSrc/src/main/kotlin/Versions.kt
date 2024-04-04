@@ -1,0 +1,22 @@
+object Versions {
+    const val activityKtx = "1.8.2"
+    const val retrofitSerialization = "1.0.0"
+    const val kotlinSerialization = "1.5.0"
+    const val retrofit = "2.9.0"
+    const val recyclerView = "1.3.2"
+    const val hilt = "2.51"
+    const val lifecycle = "2.7.0"
+    const val viewBinding = "1.5.8"
+    const val navVersion = "2.7.7"
+    const val coreKtx = "1.12.0"
+    const val appcompat = "1.6.1"
+    const val material = "1.11.0"
+    const val constraint = "2.1.4"
+    const val junit = "4.13.2"
+    const val  extJunit = "1.1.5"
+    const val espresso = "3.5.1"
+    const val coil = "2.5.0"
+    const val chucker = "3.5.2"
+    const val paging = "3.2.1"
+
+}
